@@ -1,24 +1,29 @@
 <div>
-    <ul class="instrumentos">
-      <li *ngFor="let inst of instrumentos">
-        <a routerLink="/detail/{{inst.id}}">
-          <span class="badge">{{inst.nombre}} - {{inst.rol}}</span> {{Name.name}}
-        </a>
-        <button type="button" class="delete" title="borrar Instrumento"
-          (click)="delete(inst)"> X </button>
-      </li>
+    <ul class="items" >
+        <table>
+          <thead>
+            <th> Nombre Item</th>
+            <th> Precio</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>{{item.nombre}}</td>
+              <td>{{item.precio}} </td>
+              <button type="button" class="delete" title="borrar Item" (click)="delete(item)"> X </button>
+            </tr>
+          </tbody>
+        </table>
+        <a *ngFor="let item of items" routerLink="/detail/{{item.id}}"></a>
     </ul>
   </div>
   
-  <div>
-    <label for="new-Inst">Empleado: </label>
-    <input id="new-Inst" #Name><br><br>
-    <label for="new-Inst">Rol: </label>
-    <input id="new-Inst" #marca><br><br>
-    <label for="new-Inst">genero: </label>
-    <input id="new-Inst" #costo><br><br>
-    <button type="button" class="add-button" (click)="add(Name.value,marca.value,costo.value); Name.value='';marca.value='';costo.value='';">
-      Anadir Empleado
+  <div id="Menu">
+    <label for="new-Item">Item: </label>
+    <input id="new-Item" #Name><br><br>
+    <label for="new-Item">Precio: </label>
+    <input id="new-Item" #precio><br><br>
+    <button type="button" class="add-button" (click)="add(Name.value,precio.value); Name.value='';precio.value='';">
+      Anadir Item
     </button>
   </div>
   

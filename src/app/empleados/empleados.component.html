@@ -1,0 +1,28 @@
+<div>
+  <ul class="empleados">
+    <li *ngFor="let emp of empleados">
+      <a routerLink="/detail/{{emp.id}}">
+        <span class="badge">{{emp.nombre}} - {{emp.rol}} - {{emp.genero}}</span>
+      </a>
+      <button type="button" class="delete" title="borrar Instrumento"
+        (click)="delete(emp)"> X </button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <label for="new-Emp">Empleado: </label>
+  <input id="new-Emp" #Name><br><br>
+  <label for="new-Emp">Rol: </label>
+  <input id="new-Emp" #rol><br><br>
+  <label for="new-Emp">genero: </label>
+  <input id="new-Emp" #genero><br><br>
+  <button type="button" class="add-button" (click)="add(Name.value,rol.value,genero.value); Name.value='';rol.value='';genero.value='';">
+    Anadir Empleado
+  </button>
+</div>
+
+
+
+  
+  

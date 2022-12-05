@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Empleado } from '../empleado.interface';
-import { ItemService } from '../items.service';
+import { Item } from '../interfaces/items.interface'; //cambiar a items
+import { ItemService } from '../services/items.service';
 
 @Component({
   selector: 'app-items',
@@ -8,35 +8,32 @@ import { ItemService } from '../items.service';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent {
-  instrumentos: Empleado[]=[];
+  items: Item[]=[];
 
-  constructor(private instrumentsService:ItemService) { }
+  constructor(private itemService:ItemService) { }
 
   ngOnInit(): void{
-    this.getInstrumentos();
+    this.getItems();
   }
 
-  getInstrumentos(): void{
-    this.instrumentsService.getHeroes().subscribe(instrumentos => this.instrumentos = instrumentos);
+  getItems(): void{
+    this.itemService.getItems().subscribe(item => this.items = item);
   }
 
-  add(name:string,role:string,gender:string): void{
-   let Inst= {} as Empleado;
-   Inst.nombre=name.trim();
-   Inst.rol=role.trim();
-   Inst.genero=gender.trim();
+  add(name:string,role:string): void{
+   let item= {} as Item;
+   item.nombre=name.trim();
+   item.precio=role.trim();
 
-   let nom = Inst.nombre.trim();
-   if(!nom){return}
-   this.instrumentsService.addHero(Inst)
-     .subscribe(Inst => {
-       this.instrumentos.push(Inst);
-       console.log(Inst);
+   this.itemService.addItem(item)
+     .subscribe(item => {
+       this.items.push(item);
+       console.log(item);
    });
  }
 
-   delete(inst: Empleado): void{
-     this.instrumentos = this.instrumentos.filter(i => i !== inst);
-     this.instrumentsService.deleteHero(inst.id).subscribe();
+   delete(it: Item): void{
+     this.items = this.items.filter(i => i !== it);
+     this.itemService.deleteItem(it.id).subscribe();
    }
 }

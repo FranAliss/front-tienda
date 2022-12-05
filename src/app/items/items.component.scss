@@ -1,0 +1,47 @@
+.items{
+    padding: 70px;
+    background-color:  #E0B4A4;
+    color: #22404A;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 1px 2px 1px;
+}
+
+#Menu{
+    padding: 40px;
+    background-color:  #E0B4A4;
+    color: #22404A;
+    text-align: center;
+    box-shadow: 1px 2px 1px;
+}
+
+#new-Item{
+    font-size: 17px;
+    box-shadow: 1px 1px 1px;
+}
+
+.add-button{
+    margin-top: 20px;
+    margin-right: .5rem;
+    background-color: #22404A;
+    color: #B2BCBB;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+table, th, td {
+    background-color: #E4DCCF;
+    border: 0.1px solid;
+    border-collapse: collapse;
+    border-color: #22404A;
+    width: 100%;
+}
+
+tr:hover {
+    color: rgb(255, 255, 255);
+}
+
+.add-button:hover {
+    background-color: black;
+}

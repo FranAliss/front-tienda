@@ -1,8 +1,12 @@
-
-<html>
-    <h1>
-        {{title}}
-    </h1>
-    <router-outlet></router-outlet>
-
-</html>
+<h1>
+    {{title}}
+</h1>
+<nav id="algo">
+    <a routerLink="/">Volver a inicio</a>
+</nav>
+<nav>
+    <a routerLink="/pedidos">Pedidos |</a>  
+    <a routerLink="/items">Items | </a>
+    <a routerLink="/empleados">Empleados</a>
+</nav>
+<router-outlet></router-outlet>

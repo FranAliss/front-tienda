@@ -1,0 +1,29 @@
+<div>
+    <ul class="pedido">
+      <li *ngFor="let p of pedidos">
+        <a routerLink="/detail/{{p.id}}">
+          <span class="badge">{{p.fecha}} - {{p.empleado}} </span>
+        </a>
+        <button type="button" class="delete" title="borrar Instrumento"
+          (click)="delete(p)"> X </button>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <label for="new-Pedido">Fecha: </label>
+    <input id="new-Pedido" #date><br><br>
+    <label for="get-Emp">Empleado ID: </label>
+    <input id="get-Emp" #empleado><br><br>
+
+    <button type="button" class="add-button" (click)="add(date.value, empleado.value); 
+        date.value='';empleado.value='';">
+      Anadir Empleado
+    </button>
+  </div>
+  
+  
+  
+    
+    
+  

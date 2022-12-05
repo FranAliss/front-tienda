@@ -3,4 +3,5 @@ export interface Empleado {
     nombre: string;
     rol: string;
     genero: string;
+    pedidos:number[];
 }
