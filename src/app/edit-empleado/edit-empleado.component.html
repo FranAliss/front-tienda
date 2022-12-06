@@ -1,0 +1,18 @@
+<div *ngIf="empleado">
+    <h2>{{empleado.nombre}} Details</h2>
+    <div><span>id: </span>{{empleado.id}}</div>
+    <div>
+      <label for="empleado-name">Nombre del empleado: </label>
+      <input id="empleado-name" [(ngModel)]="empleado.nombre" placeholder="Hero name"/>
+    </div>
+    <div>
+        <label for="empleado-name">Nombre del empleado: </label>
+        <input id="empleado-name" [(ngModel)]="empleado.rol" placeholder="Hero name"/>
+    </div>
+    <div>
+        <label for="empleado-name">Nombre del empleado: </label>
+        <input id="empleado-name" [(ngModel)]="empleado.genero" placeholder="Hero name"/>
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>
+  </div>

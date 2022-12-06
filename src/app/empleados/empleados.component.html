@@ -1,7 +1,7 @@
 <div>
   <ul class="empleados">
     <li *ngFor="let emp of empleados">
-      <a routerLink="/detail/{{emp.id}}">
+      <a routerLink="/employee/{{emp.id}}">
         <span class="badge">{{emp.nombre}} - {{emp.rol}} - {{emp.genero}}</span>
       </a>
       <button type="button" class="delete" title="borrar Instrumento"

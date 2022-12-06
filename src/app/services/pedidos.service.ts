@@ -51,8 +51,9 @@ export class PedidosService {
     );
   }
 
-  updateItem(pedido: Pedido): Observable<any> {
-    return this.http.put(this.pedidosUrl, pedido, this.httpOptions).pipe(
+  updateItem(id:number, pedido: Pedido): Observable<any> {
+    const url = this.pedidosUrl+`/${id}`;
+    return this.http.put(url, pedido, this.httpOptions).pipe(
       tap(_ => console.log(`Pedidos actualizado id=${pedido.id}`)),
       catchError(this.handleError<any>('updateEmpleado'))
     );

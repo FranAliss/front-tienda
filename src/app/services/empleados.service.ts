@@ -51,8 +51,9 @@ export class EmpleadoService {
     );
   }
 
-  updateEmpleado(empleado: Empleado): Observable<any> {
-    return this.http.put('http://localhost:3000/empleados', empleado, this.httpOptions).pipe(
+  updateEmpleado(id:number, empleado: Empleado): Observable<any> {
+    const url = `http://localhost:3000/empleados/${id}`
+    return this.http.put(url, empleado, this.httpOptions).pipe(
       tap(_ => console.log(`heroe actualizado id=${empleado.id}`)),
       catchError(this.handleError<any>('updateEmpleado'))
     );

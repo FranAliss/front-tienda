@@ -7,7 +7,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of items">
-              <td>{{item.nombre}}</td>
+              <td><a routerLink="/items/{{item.id}}">{{item.nombre}}</a></td>
               <td>{{item.precio}} </td>
               <button type="button" class="delete" title="borrar Item" (click)="delete(item)"> X </button>
             </tr>

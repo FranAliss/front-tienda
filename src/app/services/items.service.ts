@@ -31,7 +31,7 @@ export class ItemService {
   getItem(id: number): Observable<any> {
     const url = this.itemsUrl+`/${id}`;
     return this.http.get<any>(url).pipe(
-      tap(_ => console.log(`Empleado obtenido id=${id}`)),
+      tap(_ => console.log(`Item obtenido id=${id}`)),
       catchError(this.handleError<any>(`getEmpleado id=${id}`))
     );
   }
@@ -52,8 +52,9 @@ export class ItemService {
     );
   }
 
-  updateItem(item: Item): Observable<any> {
-    return this.http.put(this.itemsUrl, item, this.httpOptions).pipe(
+  updateItem(id:number, item: Item): Observable<any> {
+    const url = this.itemsUrl+`/${id}`;
+    return this.http.put(url, item, this.httpOptions).pipe(
       tap(_ => console.log(`heroe actualizado id=${item.id}`)),
       catchError(this.handleError<any>('updateEmpleado'))
     );

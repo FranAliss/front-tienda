@@ -28,16 +28,15 @@ export class PedidosComponent {
     let pedido= {} as Pedido;
     pedido.fecha =date.trim();
     console.log(`id=${+id}`);
+
+    // let emp={} as Empleado;
+    // this.empleadoService.getEmpleado(+id).subscribe(p => {emp = p; console.log(`pedido=${emp.id}`);
+    // console.log(`p=${p.id}`)});
     
-    this.empleadoService.getEmpleado(+id).subscribe(p => {pedido.empleado = p; console.log(`pedido=${pedido.empleado.id}`);
-    console.log(`p=${p.id}`)});
- 
+    pedido.empleado = +id;
 
     this.pedidoService.addPedidos(pedido)
-      .subscribe(item => {
-        this.pedidos.push(item);
-        console.log(item);
-    });
+      .subscribe(item => {this.pedidos.push(item);console.log(item)});
 
     console.log(pedido.empleado);
    }

@@ -1,0 +1,14 @@
+<div *ngIf="pedido">
+    <h2>{{pedido.fecha}} Details</h2>
+    <div><span>id: </span>{{pedido.id}}</div>
+    <div>
+      <label for="empleado-name">fecha del pedido: </label>
+      <input id="empleado-name" [(ngModel)]="pedido.fecha" placeholder="pedido fecha"/>
+    </div>
+    <div>
+        <label for="empleado-name">ID del empleado: </label>
+        <input id="empleado-name" [(ngModel)]="pedido.empleado" placeholder="Empleado ID"/>
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>
+  </div>

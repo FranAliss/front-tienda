@@ -1,8 +1,9 @@
 <div>
     <ul class="pedido">
       <li *ngFor="let p of pedidos">
-        <a routerLink="/detail/{{p.id}}">
-          <span class="badge">{{p.fecha}} - {{p.empleado}} </span>
+        <a routerLink="/requests/{{p.id}}">
+          <span class="badge">{{p.id}} ||</span>
+          <span class="badge">{{p.fecha}}</span>
         </a>
         <button type="button" class="delete" title="borrar Instrumento"
           (click)="delete(p)"> X </button>
